@@ -1,0 +1,148 @@
+@font-face {
+    font-family: "My Custom Font";
+    src: url(./font/D-DIN.woff2) format("truetype");
+}
+
+@font-face {
+    font-family: "My Custom Font bold";
+    src: url(./font/DINCondensed-Bold.ttf) format("truetype");
+}
+
+body {
+    font-family: "My Custom Font" !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    margin: 0;
+}
+
+.p_bold {
+    font-family: "My Custom Font bold" !important;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.flex-item {
+    width: 100px;
+    height: 480px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.flex-item img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.flex-item:hover img {
+    transform: scale(1.1);
+    filter: blur(5px) brightness(0.5) grayscale(1);
+}
+
+.flex-item div {
+    padding: 10px 20px;
+    display: none;
+    transition: all 0.3s;
+    z-index: 50;
+    width: 100%;
+    margin: 4px;
+}
+
+.flex-item:hover div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    margin: 0;
+    margin: 4px;
+
+}
+
+.flex-item h1 {
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    /* line-height: 1; */
+    transition: all 0.3s;
+    font-weight: 800;
+    margin: 0;
+}
+
+.flex-item span {
+    color: #9e9e9e;
+    font-size: 0.75rem;
+    margin-top: 8px;
+    text-transform: capitalize;
+    font-weight: 100;
+    transition: all 0.3s;
+ 
+}
+
+.group-hover-content {
+    display: flex;
+    align-items: center;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    gap: 4px;
+    color: #00DBFF;
+    margin-top: 4px;
+    transition: all 0.3s;
+}
+
+.blue {
+    color: #00DBFF !important;
+    position: relative;
+}
+
+.flex-item:hover .group-hover-content {
+    height: 40px;
+    opacity: 1;
+    margin-bottom: 10px;
+}
+
+.group-hover-content span {
+    font-size: 0.75rem;
+}
+
+.group-hover-content svg {
+    width: 12px;
+    height: 12px;
+}
+
+@media (min-width: 768px) {
+    .flex-item {
+        width: 240px;
+    }
+    .flex-item h1 {
+    font-size: 2.2rem;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    font-weight: 800;
+    margin: 0;
+}
+
+    .flex-item div {
+        display: flex;
+        flex-direction: column;
+    }
+}
